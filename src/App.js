@@ -3,6 +3,13 @@ import React from 'react';
 function FirstComponent()
 {
   return(
+    <h2>Hello World 1</h2>
+  )
+}
+
+function SecoundComponent()
+{
+  return(
     <h2>Hello World 2</h2>
   )
 }
@@ -10,8 +17,7 @@ function FirstComponent()
 function App() {
   return (
     <div>
-      <h1>Hello World</h1>
-      <FirstComponent></FirstComponent>
+      {3>5?<FirstComponent/>:<SecoundComponent/>}
     </div>
   )
 }
