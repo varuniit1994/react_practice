@@ -1,28 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function FirstComponent()
-{
-  return(
-    <h2>Hello World 1</h2>
-  )
-}
-
-function SecoundComponent()
-{
-  return(
-    <h2>Hello World 2</h2>
-  )
-}
-
-const arr=[1,2,3,4,5,6];
+let counter=0;
 
 function App() {
+
+  function buttonClicked(event)
+  {
+    console.log(counter++);
+  }
+
   return (
     <div>
-      {3>5?<FirstComponent/>:<SecoundComponent/>}
-      <ul>
-          {arr.map(val=><li>{val**2}</li>)}
-      </ul>
+        <button onClick={buttonClicked}>Button</button>
+        <h1>{counter}</h1>
     </div>
   )
 }
