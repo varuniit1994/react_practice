@@ -14,10 +14,15 @@ function SecoundComponent()
   )
 }
 
+const arr=[1,2,3,4,5,6];
+
 function App() {
   return (
     <div>
       {3>5?<FirstComponent/>:<SecoundComponent/>}
+      <ul>
+          {arr.map(val=><li>{val**2}</li>)}
+      </ul>
     </div>
   )
 }
