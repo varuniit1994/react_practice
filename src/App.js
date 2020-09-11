@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 
-let counter=0;
+function App() 
+{
 
-function App() {
+  let [counter,setCounter]=useState(0);
 
-  function buttonClicked(event)
+  function buttonClicked()
   {
-    console.log(counter++);
+    setCounter(counter+1);
+    console.log(counter);
   }
 
   return (
