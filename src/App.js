@@ -4,13 +4,15 @@ function App()
 {
   const [name,setName]=useState("ss");
   const [password,setPassword]=useState("pass1");
-  
+
   return(
     <div>
       <input type="text" value={name} onChange={updateTextField}></input>
       <input type="password" value={password} onChange={updatePassword}></input>
 
       <button onClick={submitForm}>Submit Form</button>
+      <br></br>
+      {name==="admin" && password==="admin" ? "Hello admin":"Hello User"}    
     </div>
   )
 
