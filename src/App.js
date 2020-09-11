@@ -2,21 +2,34 @@ import React, { useState } from 'react';
 
 function App() 
 {
-
-  let [counter,setCounter]=useState(0);
-
-  function buttonClicked()
-  {
-    setCounter(counter+1);
-    console.log(counter);
-  }
-
-  return (
+  const [name,setName]=useState("ss");
+  const [password,setPassword]=useState("pass1");
+  
+  return(
     <div>
-        <button onClick={buttonClicked}>Button</button>
-        <h1>{counter}</h1>
+      <input type="text" value={name} onChange={updateTextField}></input>
+      <input type="password" value={password} onChange={updatePassword}></input>
+
+      <button onClick={submitForm}>Submit Form</button>
     </div>
   )
+
+  function updateTextField(event)
+  {
+    console.log(event.target);
+    setName(event.target.value);
+  }
+
+  function updatePassword(e)
+  {
+    console.log(e.target);
+    setPassword(e.target.value);
+  }
+
+  function submitForm()
+  {
+    console.log(`name: ${name} and password: ${password}`);
+  }
 }
 
 export default App;
