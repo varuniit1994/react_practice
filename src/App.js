@@ -1,37 +1,24 @@
 import React, { useState } from 'react';
 
-function App() 
+function GreetComponent(props)
 {
-  const [name,setName]=useState("ss");
-  const [password,setPassword]=useState("pass1");
-
-  return(
+  console.log(props);
+  return (
     <div>
-      <input type="text" value={name} onChange={updateTextField}></input>
-      <input type="password" value={password} onChange={updatePassword}></input>
-
-      <button onClick={submitForm}>Submit Form</button>
-      <br></br>
-      {name==="admin" && password==="admin" ? "Hello admin":"Hello User"}    
+      <h4>{props.name}</h4>
+      <h5>{props.age}</h5>
     </div>
   )
+}
 
-  function updateTextField(event)
-  {
-    console.log(event.target);
-    setName(event.target.value);
-  }
-
-  function updatePassword(e)
-  {
-    console.log(e.target);
-    setPassword(e.target.value);
-  }
-
-  function submitForm()
-  {
-    console.log(`name: ${name} and password: ${password}`);
-  }
+function App() 
+{
+  return(
+     <div>  
+        <h2>Hello World</h2>
+        <GreetComponent name="Varun_Bhati" age={20}></GreetComponent>
+     </div>
+  )
 }
 
 export default App;
