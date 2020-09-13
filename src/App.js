@@ -1,26 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router,Switch,Route,Link } from "react-router-dom";
+import Home from './components/Home';
+import About from './components/About';
 
-function GreetComponent(props)
-{
-  console.log(props);
-  return (
-    <div>
-      <h4>{props.name}</h4>
-      <h5>{props.age}</h5>
-      <p>{props.children}</p>
-    </div>
-  )
-}
-
-function App() 
-{
+function App()
+{ 
   return(
-     <div>  
-        <h2>Hello World</h2>
-        <GreetComponent name="Varun_Bhati" age={20}>
-          I am Children of GreetComponent!!!...
-        </GreetComponent>
-     </div>
+    <Router>
+      <Switch>
+        <Route path="/" exact component={Home}></Route>
+        <Route path="/about" exact component={About}></Route>
+      </Switch>
+    </Router>
   )
 }
 
